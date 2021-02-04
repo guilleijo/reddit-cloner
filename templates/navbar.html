@@ -1,0 +1,18 @@
+<header class="text-gray-600 body-font px-8">
+    <div class="container mx-auto flex flex-wrap p-5 flex-row items-center md:items-center">
+        <a href="{% url 'landing_page' %}" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+                stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            <span class="ml-3 text-xl">ReC</span>
+        </a>
+        {% if request.path == '/' %}
+        <nav class="ml-auto flex flex-wrap items-center text-base justify-center">
+            <a href="#about" class="mr-5 hover:text-gray-900">About</a>
+            <a href="#contact" class="mr-5 hover:text-gray-900">Contact</a>
+        </nav>
+        {% endif %}
+    </div>
+</header>

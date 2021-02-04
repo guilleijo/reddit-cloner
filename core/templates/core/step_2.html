@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="w-full flex flex-col justify-between flex-grow lg:w-3/5 mx-auto mb-10 p-12 text-gray-600 body-font">
+    {% if subreddits %}
+    <div class="space-y-8">
+        <div>
+            <h2 class="text-gray-900 font-semibold tracking-wider text-sm mb-3">We will copy the following subreddits:</h2>
+            <div class="flex flex-col max-h-80 overflow-y-auto list-none -mb-1">
+                {% for sub in subreddits %}
+                <li class="text-sm tracking-wider lg:w-1/3 mb-1 w-1/2">- {{sub}}</li>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="flex flex-col">
+        <div class="mt-12 mb-4">
+            <span class="text-sm ">Logout from your old account before continuing to the next step.</span>
+            <a class="text-xs cursor-pointer hover:text-indigo-500" href="https://www.reddit.com"
+                target="blank"><span>(Click here to go to reddit to logout)</span></a>
+        </div>
+        <div>
+            <a href="{{reddit_url}}"
+                class="inline-flex text-white bg-indigo-500 border-0 py-2 px-4 mr-4 focus:outline-none hover:bg-indigo-600 rounded text-sm">
+                Authorize new account
+            </a>
+        </div>
+    </div>
+    {% else %}
+    <div class="space-y-8">
+        <div class="title-font tracking-wider text-sm mb-3">
+            There are no subreddits to copy from user:
+            <span class="text-gray-900 font-semibold">{{reddit_user}}</span>
+        </div>
+        <div class="mt-12 mb-4">
+            <span class="text-sm ">Go back and login with an account that has subscriptions</span>
+        </div>
+        <div>
+            <a href="{% url 'landing_page' %}"
+                class="inline-flex text-white bg-indigo-500 border-0 py-2 px-4 mr-4 focus:outline-none hover:bg-indigo-600 rounded text-sm">
+                Go back to home
+            </a>
+        </div>
+    </div>
+    {% endif %}
+</section>
+{% endblock content %}

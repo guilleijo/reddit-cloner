@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="flex flex-col flex-grow lg:w-3/5 mx-auto my-10 p-12 text-gray-600 body-font ">
+    <div class="space-y-8">
+        <div class="title-font tracking-wider text-md mb-3">
+            <span class="text-gray-900 font-semibold">{{success}}</span>
+            {{message}}
+        </div>
+    </div>
+
+    <div class="mt-8">
+        <a href="{% url 'landing_page' %}"
+            class="inline-flex text-white bg-indigo-500 border-0 py-2 px-4 mr-4 focus:outline-none hover:bg-indigo-600 rounded text-sm">
+            {{button}}
+        </a>
+    </div>
+</section>
+{% endblock content %}

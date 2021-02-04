@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="flex flex-col flex-grow lg:w-3/5 mx-auto my-10 p-12 text-gray-700 body-font ">
+    <div class="space-y-8">
+        <div class="title-font tracking-wider text-md mb-2">
+            You will be redirected to Reddit in order to allow this app access to your subreddit subscription data.
+        </div>
+    </div>
+
+    <div class="mt-8">
+        <a href="{{reddit_url}}"
+            class="inline-flex text-white bg-indigo-500 border-0 py-2 px-4 mr-4 focus:outline-none hover:bg-indigo-600 rounded text-sm">
+            Authorize account
+        </a>
+    </div>
+</section>
+{% endblock content %}
